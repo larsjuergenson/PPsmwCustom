@@ -1,4 +1,4 @@
-# PpSmwCustom: Semantic Medwiawiki customizations the Perrypedia 
+# PpSmwCustom: Semantic Medwiawiki customizations for the Perrypedia 
 
 This Mediawiki extension provides customizations specific to the Mediawiki installation of the [Perrypedia](http://www.perrypedia.proc).
 
