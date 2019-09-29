@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lars Juergenson"
+		]
+	},
+	"pp-smw-printer-param-msg-template": "Name des Templates, mit dem die einzelnen Ergebniszeilen gerendert werden.",
+	"pp-smw-printer-param-msg-template_parameters": "Zusätzliche Parameter, die dem Zeilen-Template übergeben werden sollen. Einzele Parameter sollten als 'name=wert' übergeben werden, mehrere Parameter durch Komma getrennt.",
+	"pp-smw-printer-param-msg-header_template": "Name des Templates, mit dem die Buchstaben als Abschnittsüberschriften gerendert werden.\nErhält den Buchstaben/Überschriftentext als unbenannten Parameter.",
+    "pp-smw-printer-param-msg-header_template_parameters": "Zusätzliche Parameter, die dem Buchstaben/Überschriften-Template übergeben werden sollen. Einzelen Parameter sollten als 'name=wert' übergeben werden, mehrere Parameter durch Komma getrennt.",
+    "pp-smw-printer-param-msg-sortkey_property": "Legt fest, welches Attribut zum sortieren der Ergebnisse einer Personenliste benutzt wird."
+}
+
