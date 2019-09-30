@@ -1,5 +1,5 @@
 {
-	"name": "PpSmwCustom",
+	"name": "PPsmwCustom",
 	"author": "Lars Juergenson",
 	"description": "PP-spezifische Anpassungen für Semantic MediaWiki",
 	"version": "x.x",
@@ -13,17 +13,17 @@
 		}
 	},
 	"AutoloadClasses": {
-		"PpSmwCustom": "PpSmwCustom.php",
+		"PPsmwCustom": "PPsmwCustom.php",
 		"PP\\SMW\\Helpers\\TemplateHelper": "src/Helpers/TemplateHelper.php",
 		"PP\\SMW\\Helpers\\ResultHelper": "src/Helpers/ResultHelper.php",
 		"PP\\SMW\\ResultPrinters\\AbcListPrinter": "src/ResultPrinters/AbcListPrinter.php",
 		"PP\\SMW\\ResultPrinters\\PersonListPrinter": "src/ResultPrinters/PersonListPrinter.php"
 	},
 	"ExtensionFunctions": [
-		"PpSmwCustom::onExtensionFunction"
+		"PPsmwCustom::onExtensionFunction"
 	],
 	"MessagesDirs": {
-	    "PpSmwCustom": [
+	    "PPsmwCustom": [
 	        "i18n"
 	     ]
 	},

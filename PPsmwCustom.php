@@ -3,7 +3,7 @@
 /**
  * @codeCoverageIgnore
  */
-class PpSmwCustom {
+class PPsmwCustom {
 	/**
 	 * Registers the new result formats.
 	 */
