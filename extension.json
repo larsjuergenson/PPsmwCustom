@@ -2,7 +2,7 @@
 	"name": "PPsmwCustom",
 	"author": "Lars Juergenson",
 	"description": "PP-spezifische Anpassungen für Semantic MediaWiki",
-	"version": "x.x",
+	"version": "1.0",
 	"license-name": "GPL-2.0-or-later",
 	"type": "semantic",
 	"manifest_version": 2,
