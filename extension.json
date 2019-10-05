@@ -17,11 +17,19 @@
 		"PP\\SMW\\Helpers\\TemplateHelper": "src/Helpers/TemplateHelper.php",
 		"PP\\SMW\\Helpers\\ResultHelper": "src/Helpers/ResultHelper.php",
 		"PP\\SMW\\ResultPrinters\\AbcListPrinter": "src/ResultPrinters/AbcListPrinter.php",
-		"PP\\SMW\\ResultPrinters\\PersonListPrinter": "src/ResultPrinters/PersonListPrinter.php"
+		"PP\\SMW\\ResultPrinters\\PersonListPrinter": "src/ResultPrinters/PersonListPrinter.php",
+		"PP\\SMW\\ParserFunctions\\SortKey": "src/ParserFunctions/SortKey.php"
+
 	},
 	"ExtensionFunctions": [
 		"PPsmwCustom::onExtensionFunction"
 	],
+	"ExtensionMessagesFiles": {
+		"PPsmwCustomMagic": "i18n/MagicWords.i18n.php"
+	},
+	"Hooks": {
+		"ParserFirstCallInit": "PPsmwCustom::onParserFirstCallInit"
+	},
 	"MessagesDirs": {
 	    "PPsmwCustom": [
 	        "i18n"

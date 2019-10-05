@@ -13,5 +13,11 @@ class PPsmwCustom {
 		$GLOBALS['smwgResultFormats']['pp person list'] = 'PP\\SMW\\ResultPrinters\\PersonListPrinter';
 		
 	}
+	/**
+	 * Registers the new parser functions
+	 */
+	public static function onParserFirstCallInit( Parser $parser ) {
 
+       $parser->setFunctionHook( 'SortKey', 'PP\SMW\ParserFunctions\SortKey::hook' );
+   }
 }
