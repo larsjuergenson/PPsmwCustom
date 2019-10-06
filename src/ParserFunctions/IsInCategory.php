@@ -85,6 +85,10 @@ class IsInCategory {
 	}
 
 	public static function hook( &$parser, $category = '', $page = '') {
+		// We have to look at the page, and at the category page, which qualify
+		// as "expensive" function calls, I think.
+		$parser->incrementExpensiveFunctionCount();
+		$parser->incrementExpensiveFunctionCount();
 		return self::isInCategory( $category, $page ) ? 'TRUE' : '';
 	}
 }
