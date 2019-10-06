@@ -6,7 +6,7 @@ use PP\SMW\ParserFunctions\SortKey;
  * @group PPsmwCustom
  * @covers PP\SMW\ParserFunctions\SortKey
  */
-class ProxyObjectBuilderTest extends MediaWikiTestCase {
+class SortKeyTest extends MediaWikiTestCase {
 
   public function testTranslateAccentedChars() {
     self::assertEquals( 
