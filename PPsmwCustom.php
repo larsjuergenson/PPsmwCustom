@@ -23,9 +23,9 @@ class PPsmwCustom {
 			'PP\SMW\ParserFunctions\SortKey::hook' 
 		);
 
-		 $parser->setFunctionHook( 
-        		'isInCategory', 
-        		'PP\SMW\ParserFunctions\IsInCategory::hook'
-        	);
+		$parser->setFunctionHook( 
+        	'isInCategory', 
+        	'PP\SMW\ParserFunctions\IsInCategory::hook'
+        );
    }
 }
