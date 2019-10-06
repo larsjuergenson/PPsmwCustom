@@ -16,9 +16,12 @@
 		"PPsmwCustom": "PPsmwCustom.php",
 		"PP\\SMW\\Helpers\\TemplateHelper": "src/Helpers/TemplateHelper.php",
 		"PP\\SMW\\Helpers\\ResultHelper": "src/Helpers/ResultHelper.php",
+		"PP\\SMW\\Helpers\\PageHelper": "src/Helpers/PageHelper.php",
+		"PP\\SMW\\Helpers\\DatabaseHelper": "src/Helpers/DatabaseHelper.php",
 		"PP\\SMW\\ResultPrinters\\AbcListPrinter": "src/ResultPrinters/AbcListPrinter.php",
 		"PP\\SMW\\ResultPrinters\\PersonListPrinter": "src/ResultPrinters/PersonListPrinter.php",
-		"PP\\SMW\\ParserFunctions\\SortKey": "src/ParserFunctions/SortKey.php"
+		"PP\\SMW\\ParserFunctions\\SortKey": "src/ParserFunctions/SortKey.php",
+		"PP\\SMW\\ParserFunctions\\IsInCategory": "src/ParserFunctions/IsInCategory.php"
 
 	},
 	"ExtensionFunctions": [

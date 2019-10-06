@@ -18,6 +18,14 @@ class PPsmwCustom {
 	 */
 	public static function onParserFirstCallInit( Parser $parser ) {
 
-       $parser->setFunctionHook( 'SortKey', 'PP\SMW\ParserFunctions\SortKey::hook' );
+		$parser->setFunctionHook( 
+			'SortKey', 
+			'PP\SMW\ParserFunctions\SortKey::hook' 
+		);
+
+		 $parser->setFunctionHook( 
+        		'isInCategory', 
+        		'PP\SMW\ParserFunctions\IsInCategory::hook'
+        	);
    }
 }
