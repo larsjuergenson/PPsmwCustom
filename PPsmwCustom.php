@@ -1,8 +1,5 @@
 <?php
 
-use DatabaseUpdater;
-use Parser;
-
 /**
  * @codeCoverageIgnore
  */

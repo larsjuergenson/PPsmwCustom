@@ -10,7 +10,6 @@ use SMW\DataValueFactory;
 
 class SemanticDataHelper {
 
-
 	public static function getStringValuesForProperty( 
 		string $property_name, 
 		$data 
