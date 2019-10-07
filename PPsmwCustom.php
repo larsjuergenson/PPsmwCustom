@@ -1,11 +1,14 @@
 <?php
 
+use DatabaseUpdater;
+use Parser;
+
 /**
  * @codeCoverageIgnore
  */
 class PPsmwCustom {
 	/**
-	 * Registers the new result formats.
+	 * Registers the result formats.
 	 */
 	public static function onExtensionFunction() {
 		
@@ -14,7 +17,7 @@ class PPsmwCustom {
 		
 	}
 	/**
-	 * Registers the new parser functions
+	 * Registers the parser functions.
 	 */
 	public static function onParserFirstCallInit( Parser $parser ) {
 
@@ -28,4 +31,13 @@ class PPsmwCustom {
         	'PP\SMW\ParserFunctions\IsInCategory::hook'
         );
    }
+   /**
+	 * Creates the 'ppredirects' table on update.php run.
+	 */
+   public static function onLoadExtensionSchemaUpdates( $updater = NULL ) {
+		$updater->addExtensionTable(
+				'pp_smw_redirects',
+				dirname( __FILE__ ) . '/sql/pp_smw_redirects.sql'
+		);
+	}
 }

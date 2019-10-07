@@ -32,7 +32,8 @@
 		"PPsmwCustomMagic": "i18n/MagicWords.i18n.php"
 	},
 	"Hooks": {
-		"ParserFirstCallInit": "PPsmwCustom::onParserFirstCallInit"
+		"ParserFirstCallInit": "PPsmwCustom::onParserFirstCallInit",
+		"LoadExtensionSchemaUpdates": "PPsmwCustom::onLoadExtensionSchemaUpdates"
 	},
 	"MessagesDirs": {
 	    "PPsmwCustom": [
