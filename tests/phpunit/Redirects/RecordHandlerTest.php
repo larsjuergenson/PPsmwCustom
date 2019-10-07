@@ -95,8 +95,5 @@ class RecordHandlerTest extends MediaWikiTestCase {
         self::assertFalse(RecordHandler::isRecorded( $this->page26 ));
 
     }
-
-
-
  
 }
