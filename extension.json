@@ -23,7 +23,8 @@
 		"PP\\SMW\\ResultPrinters\\PersonListPrinter": "src/ResultPrinters/PersonListPrinter.php",
 		"PP\\SMW\\ParserFunctions\\SortKey": "src/ParserFunctions/SortKey.php",
 		"PP\\SMW\\ParserFunctions\\IsInCategory": "src/ParserFunctions/IsInCategory.php",
-		"PP\\SMW\\Redirects\\RecordHandler": "src/Redirects/RecordHandler.php"
+		"PP\\SMW\\Redirects\\RecordHandler": "src/Redirects/RecordHandler.php",
+		"PP\\SMW\\Redirects\\ProxyObjectBuilder": "src/Redirects/ProxyObjectBuilder.php"
 
 
 	},
