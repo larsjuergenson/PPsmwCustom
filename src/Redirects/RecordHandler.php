@@ -13,16 +13,16 @@ class RecordHandler {
 
 	}
 
-	public function delete( int $pageId ) {
+	public function delete( WikiPage $page ) {
 
 		$this->dbw->delete(
 			'pp_smw_redirects',
-			array('rid' => $pageId )
+			array('rid' => $page->getId() )
 		);
 
 	}
 
-	public function record( int $pageId, string $displayPage, string $proxyObject ) {
+	public function record( WikiPage $page, string $displayPage, string $proxyObject ) {
 
 		// Replace is like insert, but replaces any
 		// existing row with the same id.
@@ -30,7 +30,7 @@ class RecordHandler {
 			'pp_smw_redirects', 
 			'rid',
 			array(
-				'rid' => $pageId,
+				'rid' => $page->getId(),
 				'displayed_in' => $displayPage,
 				'object_declaration' => $proxyObject,
 			)
@@ -42,12 +42,12 @@ class RecordHandler {
 		return $handler;
 	}
 
-	public static function isRecorded( int $pageId ) {
+	public static function isRecorded( WikiPage $page ) {
 		$res = DatabaseHelper::getConnection('read-only')->select(
 			'pp_smw_redirects',
 			'rid',
 			array(
-				'rid' => $pageId,
+				'rid' => $page->getId(),
 			)
 		);
 		$row = $res->next();
