@@ -54,7 +54,7 @@ class PageHelper {
 		return $this->page->getTitle()->getDBKey();
 	}
 	/**
-	 * Retrieve the list of categories the page belongs to, as a string.
+	 * Retrieve the list of categories the page belongs to.
 	 *
 	 * @return array Array of strings, each of which is a category name 
 	 *               without prefix.
@@ -64,8 +64,8 @@ class PageHelper {
 	}
 
 	/**
-	 * Build a string of #subobject arguments that encode the SMW properties 
-	 * of the page.
+	 * Extract the values of properties, in a form that can be used to define
+	 * the same values on another page.
 	 *
 	 * Implementation note:
 	 * While the parser functions of SMW do their job on redirect pages,
@@ -73,20 +73,19 @@ class PageHelper {
 	 * is to let Mediawiki parse the page, then extract the property values and
 	 * encode them so that they can be inserted into the proxy subobject.
 	 *
-	 * @param array $defaults 
 	 *
 	 * @return string An array of property values (as strings),  keyed by 
 	 *                property names.
 	 *
 	 * LIMITATIONS:
-	 * - Right now, only user-defined properties get transferred to the proxy.
+	 * - Right now, only user-defined properties get returned.
 	 */
 	public function getPropertyValues() : array {
 
 		$data = $this->getSemanticData();
 
 		$values = array();
-		foreach ( $semanticData->getProperties() as $property ) {
+		foreach ( $data->getProperties() as $property ) {
 
 			if ( $property->isUserDefined() ){
 
@@ -104,7 +103,7 @@ class PageHelper {
 	public function getSortKey() {
 		// SMW conveniently stores the (default) sort key in the property
 		// _SKEY
-		return SemanticDataHelper::getStringValuesForProperty( '_SKEY' )[0];
+		return SemanticDataHelper::getStringValuesForProperty( '_SKEY', $this->getSemanticData() )[0];
 
 	}
 
