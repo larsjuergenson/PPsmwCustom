@@ -70,7 +70,9 @@ class RecordHandlerTest extends MediaWikiTestCase {
     }
 
     public function testDisplayIsWritten() {
+
         DisplayHandler::update('displayA');
+        
         $displayATitle = Title::newFromText('displayA');
         
         // Has the page been created?
