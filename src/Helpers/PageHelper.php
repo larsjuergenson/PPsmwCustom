@@ -121,7 +121,11 @@ class PageHelper {
 	}
 
 	public static function getCagegoriesOf(WikiPage $page) : array {
-		return array_keys($page->getTitle()->getParentCategories());
+		// We get the links from the parser output, as we need the most
+		// current version early.
+		return $page
+			->getParserOutput( $page->makeParserOptions('canonical') )
+			->getCategoryLinks();
 	}
 
 }

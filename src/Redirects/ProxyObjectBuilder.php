@@ -74,7 +74,7 @@ class ProxyObjectBuilder {
 		$args = [];
 
 		// Categories
-		$args['@category'] = $this->getCategoryArgument(';;', ['Kategorie:Redirects']);
+		$args['@category'] = $this->getCategoryArgument(';;', ['Redirect']);
 
 		// Sortkey
 		$args['@sortkey'] = $this->getSortKey();

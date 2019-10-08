@@ -16,7 +16,7 @@ class DisplayHandler {
 	const BEGIN_DISPLAY_PAGE_WITH = 
 <<<'EOD'
 Diese Seite wird automatisch generiert. Sie sollte niemals von Hand bearbeitet werden. 
-Jegliche Änderungen an dieser Seite werden automatisch überschrieben und/oder oder führen zu inkonsistenten Daten.
+Jegliche Änderungen an dieser Seite werden automatisch überschrieben.
 
 EOD;
 

@@ -53,16 +53,15 @@ class Controller {
 
 		$categories = PageHelper::getCagegoriesOf($page);
 
-
 		// A page is (for now) only recorded if it is a Neo page.
-		if (!in_array('Kategorie:Perry_Rhodan_Neo', $categories)) {
+		if (!in_array('Perry_Rhodan_Neo', $categories)) {
 			return false;
 		}
 
 		// A page is not recorded if it has the category
 		// 'Keine fehlenden Kategorieeinträge'.
 		// (Since then, the redirect is just a variant spelling.)
-		if (in_array('Kategorie:Keine_fehlenden_Kategorieeinträge', $categories)) {
+		if (in_array('Keine_fehlenden_Kategorieeinträge', $categories)) {
 			return false;
 		}
 

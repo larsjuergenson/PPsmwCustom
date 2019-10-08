@@ -28,7 +28,7 @@ class ProxyObjectBuilderTest extends MediaWikiTestCase {
     $infoStub->method('getName')
              ->willReturn('Page Name');
     $infoStub->method('getCategories')
-             ->willReturn(array('category1', 'category2', 'category3', 'Kategorie:Redirects'));
+             ->willReturn(array('category1', 'category2', 'category3', 'Redirect'));
 
     $infoStub->method('getPropertyValues')
              ->willReturn($propvals);

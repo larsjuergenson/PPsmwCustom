@@ -38,7 +38,8 @@
 	},
 	"Hooks": {
 		"ParserFirstCallInit": "PPsmwCustom::onParserFirstCallInit",
-		"LoadExtensionSchemaUpdates": "PPsmwCustom::onLoadExtensionSchemaUpdates"
+		"LoadExtensionSchemaUpdates": "PPsmwCustom::onLoadExtensionSchemaUpdates",
+		"PageContentSaveComplete": "PPsmwCustom::onPageContentSaveComplete"
 	},
 	"MessagesDirs": {
 	    "PPsmwCustom": [

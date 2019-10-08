@@ -39,7 +39,7 @@ class PageHelperTest extends MediaWikiTestCase {
     }
 
     public function testGetCategories() {
-        self::assertEquals( array('Kategorie:Category1','Kategorie:Category_2'), $this->pageHelper->getCategories() );
+        self::assertEquals( array('Category1','Category_2'), $this->pageHelper->getCategories() );
     }
 
     public function testGetPropertyValues() {
