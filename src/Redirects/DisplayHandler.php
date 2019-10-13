@@ -15,6 +15,7 @@ class DisplayHandler {
 
 	const BEGIN_DISPLAY_PAGE_WITH = 
 <<<'EOD'
+__NOINDEX__
 Diese Seite wird automatisch generiert. Sie sollte niemals von Hand bearbeitet werden. 
 Jegliche Änderungen an dieser Seite werden automatisch überschrieben.
 

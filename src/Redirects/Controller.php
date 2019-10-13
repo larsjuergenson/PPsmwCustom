@@ -5,10 +5,11 @@ namespace PP\SMW\Redirects;
 use WikiPage;
 use PP\SMW\Helpers\PageHelper;
 use PP\SMW\Redirects\ProxyObjectBuilder;
+use PP\SMW\ParserFunctions\SortKey;
 
 class Controller {
 
-	public static function process( WikiPage $page ) {
+	public static function process( WikiPage $page, bool $updateDisplay = TRUE ) {
 	
 		// Is the current page one that should be recorded as a redirect?
 		$displayName = self::getDisplayPageNameFor( $page );
@@ -22,8 +23,9 @@ class Controller {
 				ProxyObjectBuilder::buildProxyFor( $page )
 			);
 
-			// Rebuild the display page.
-			DisplayHandler::update($displayName);
+			if ( $updateDisplay ) {
+				DisplayHandler::update( $displayName );	
+			}
 
 		} elseif ( RecordHandler::isRecorded( $page ) ) {
 			// The page should not be recorded, but it is.
@@ -32,9 +34,9 @@ class Controller {
 			// Remove the database record for the page
 			RecordHandler::getInstance()->delete( $page );
 
-		    // Regenerate the corresponding display page
-			DisplayHandler::update( $displayName );
-
+		   	if ( $updateDisplay ) {
+				DisplayHandler::update($displayName);	
+			}
 		}
 		
 	}
@@ -71,9 +73,9 @@ class Controller {
 
 	public static function getDisplayPageNameFor(WikiPage $page) : string {
 		$begins_with = substr(
-			$page->getTitle()->getText(),
+			SortKey::for($page->getTitle()->getText()),
 			0,
-			3
+		    1
 		);
 		return 'Perrypedia:Auto/Redirects/' . $begins_with;
 	}
