@@ -2,7 +2,7 @@
 	"name": "PPsmwCustom",
 	"author": "Lars Juergenson",
 	"description": "PP-spezifische Anpassungen für Semantic MediaWiki",
-	"version": "1.5",
+	"version": "1.6",
 	"license-name": "GPL-2.0-or-later",
 	"type": "semantic",
 	"manifest_version": 2,
@@ -22,13 +22,7 @@
 		"PP\\SMW\\ResultPrinters\\AbcListPrinter": "src/ResultPrinters/AbcListPrinter.php",
 		"PP\\SMW\\ResultPrinters\\PersonListPrinter": "src/ResultPrinters/PersonListPrinter.php",
 		"PP\\SMW\\ParserFunctions\\SortKey": "src/ParserFunctions/SortKey.php",
-		"PP\\SMW\\ParserFunctions\\IsInCategory": "src/ParserFunctions/IsInCategory.php",
-		"PP\\SMW\\Redirects\\RecordHandler": "src/Redirects/RecordHandler.php",
-		"PP\\SMW\\Redirects\\ProxyObjectBuilder": "src/Redirects/ProxyObjectBuilder.php",
-		"PP\\SMW\\Redirects\\DisplayHandler": "src/Redirects/DisplayHandler.php",
-		"PP\\SMW\\Redirects\\Controller": "src/Redirects/Controller.php"
-
-
+		"PP\\SMW\\ParserFunctions\\IsInCategory": "src/ParserFunctions/IsInCategory.php"
 	},
 	"ExtensionFunctions": [
 		"PPsmwCustom::onExtensionFunction"
@@ -37,9 +31,7 @@
 		"PPsmwCustomMagic": "i18n/MagicWords.i18n.php"
 	},
 	"Hooks": {
-		"ParserFirstCallInit": "PPsmwCustom::onParserFirstCallInit",
-		"LoadExtensionSchemaUpdates": "PPsmwCustom::onLoadExtensionSchemaUpdates",
-		"PageContentSaveComplete": "PPsmwCustom::onPageContentSaveComplete"
+		"ParserFirstCallInit": "PPsmwCustom::onParserFirstCallInit"
 	},
 	"MessagesDirs": {
 	    "PPsmwCustom": [
