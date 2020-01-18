@@ -36,7 +36,7 @@ EOD;
 		$displayPage->doEditContent(
 			new WikitextContent($content), 
 			'Updated because a redirect was altered.',
-			0, 
+			EDIT_FORCE_BOT,
 			false, 
 			User::newSystemUser('PPsmwRedirectRecorder')
 		);
