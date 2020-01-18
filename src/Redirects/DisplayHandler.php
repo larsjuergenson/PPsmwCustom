@@ -21,7 +21,7 @@ Jegliche Änderungen an dieser Seite werden automatisch überschrieben.
 
 EOD;
 
-	const END_DISPLAY_PAGE_WITH = '[[Kategorie:SMW]][[Kategorie:Automatisch generierte Seiten]]';
+	const END_DISPLAY_PAGE_WITH = '';
 
 	public function __construct( IDatabase $dbr ) {
  		$this->dbr = $dbr;
