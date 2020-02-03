@@ -166,6 +166,10 @@ class AbcListPrinter extends \SMW\Query\ResultPrinters\ResultPrinter {
 
 			$first = Collator::singleton()->getFirstLetter( $key );
 
+			if ( in_array($first, ['0','1','2','3','4','5','6','7','8','9']) ) {
+				$first = '0-9';
+			}
+
 			if ( !isset( $contents[$first] ) ) {
 				$contents[$first] = [];
 			}
