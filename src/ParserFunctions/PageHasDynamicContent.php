@@ -20,7 +20,6 @@ class PageHasDynamicContent {
 	public static function hook( &$parser) {
 
 		$parser->getOutput()->setExtensionData( 'pp_smw_is_dynamic', true );
-
-		return 'yes';
+		return '';
 	}
 }
