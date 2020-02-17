@@ -29,6 +29,11 @@ class PPsmwCustom {
         	'isInCategory', 
         	'PP\SMW\ParserFunctions\IsInCategory::hook'
         );
+
+        $parser->setFunctionHook(
+			'PageHasDynamicContent',
+			'PP\SMW\ParserFunctions\PageHasDynamicContent::hook'
+        );
    }
 
    /**
@@ -68,10 +73,39 @@ class PPsmwCustom {
     	return TRUE;
     }
 
-   /**
-	 * Creates the 'pp_smw_redirects' table on update.php run.
-	 */
-   public static function onLoadExtensionSchemaUpdates( $updater = NULL ) {
+    /**
+      * This oddly-named hook is executed whenever a page is parsed (regardless
+      * of whether its source has been changed or not).
+      *
+      * We use it to create a RefreshLinks job whenever a "dynamic" page is parsed.
+      * (Otherwise, pagelinks would be updated only on edits. When the page contains
+      * an SMW query, however, the links can change without the page being edited.)
+      */
+
+    public static function onOpportunisticLinksUpdate(
+		Page $page,
+		Title $title,
+		parserOutput $parserOutput
+    ) {
+		if (!$parserOutput->getExtensionData( 'pp_smw_is_dynamic' ) ) {
+			// If the page is not dynamic, we don't do anything.
+			return true;
+		}
+
+		$params = [
+			'isOpportunistic' => true,
+			'rootJobTimestamp' => $parserOutput->getCacheTime()
+		];
+		JobQueueGroup::singleton()->lazyPush(
+			RefreshLinksJob::newDynamic( $title, $params )
+		);
+		return true;
+    }
+
+    /**
+	  * Creates the 'pp_smw_redirects' table on update.php run.
+	  */
+    public static function onLoadExtensionSchemaUpdates( $updater = NULL ) {
 		$updater->addExtensionTable(
 				'pp_smw_redirects',
 				dirname( __FILE__ ) . '/sql/pp_smw_redirects.sql'
