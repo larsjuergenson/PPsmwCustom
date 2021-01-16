@@ -82,7 +82,7 @@ class ProxyObjectBuilder {
 		// SMW Properties
 		$args = $args + $this->getPropertyArguments(';;');
 
-		$command = '#subobject:' . $this->getSortKey();
+		$command = '#subobject:redirect-' . $this->getSortKey();
 
 		return TemplateHelper::getTemplateCall($command, $args);
 

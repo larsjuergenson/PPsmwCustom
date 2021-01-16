@@ -55,11 +55,6 @@ class Controller {
 
 		$categories = PageHelper::getCagegoriesOf($page);
 
-		// A page is (for now) only recorded if it is a Neo page.
-		if (!in_array('Perry_Rhodan_Neo', $categories)) {
-			return false;
-		}
-
 		// A page is not recorded if it has the category
 		// 'Keine fehlenden Kategorieeinträge'.
 		// (Since then, the redirect is just a variant spelling.)
@@ -75,7 +70,7 @@ class Controller {
 		$begins_with = substr(
 			SortKey::for($page->getTitle()->getText()),
 			0,
-		    1
+		    2
 		);
 		return 'Perrypedia:Auto/Redirects/' . $begins_with;
 	}
